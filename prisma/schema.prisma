@@ -1,0 +1,81 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         Int      @id @default(autoincrement())
+  email      String   @unique
+  name       String?
+  password   String
+  isAdmin    Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  attempts   Attempt[]
+}
+
+model Exam {
+  id            Int      @id @default(autoincrement())
+  key           String   @unique
+  title         String
+  description   String?
+  totalQuestions Int
+  timeLimitMin  Int
+  createdAt     DateTime @default(now())
+  versions      ExamVersion[]
+}
+
+model ExamVersion {
+  id       Int    @id @default(autoincrement())
+  exam     Exam   @relation(fields: [examId], references: [id])
+  examId   Int
+  version  String
+  questions Question[]
+}
+
+model Question {
+  id            Int      @id @default(autoincrement())
+  examVersion   ExamVersion @relation(fields: [examVersionId], references: [id])
+  examVersionId Int
+  domain        String
+  difficulty    Int
+  type          String
+  text          String  @db.Text
+  explanation   String  @db.Text
+  choices       Choice[]
+}
+
+model Choice {
+  id         Int     @id @default(autoincrement())
+  question   Question @relation(fields: [questionId], references: [id])
+  questionId Int
+  label      String
+  text       String
+  isCorrect  Boolean  @default(false)
+}
+
+model Attempt {
+  id           Int      @id @default(autoincrement())
+  user         User     @relation(fields: [userId], references: [id])
+  userId       Int
+  examVersion  ExamVersion @relation(fields: [examVersionId], references: [id])
+  examVersionId Int
+  startedAt    DateTime @default(now())
+  finishedAt   DateTime?
+  score        Int?
+  answers      AttemptAnswer[]
+}
+
+model AttemptAnswer {
+  id           Int      @id @default(autoincrement())
+  attempt      Attempt  @relation(fields: [attemptId], references: [id])
+  attemptId    Int
+  question     Question @relation(fields: [questionId], references: [id])
+  questionId   Int
+  selectedChoiceId Int?
+  textAnswer   String?
+  isCorrect    Boolean?
+}

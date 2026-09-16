@@ -1,0 +1,67 @@
+[
+  {
+    "id": "IP-001",
+    "domain": "ストラテジ系",
+    "difficulty": 2,
+    "text": "企業が新規事業を検討する際、事業環境の外部要因を分析するフレームワークとして最も適切なものはどれか。",
+    "choices": [
+      { "label": "A", "text": "SWOT分析", "isCorrect": false },
+      { "label": "B", "text": "PEST分析", "isCorrect": true },
+      { "label": "C", "text": "ベンチマーキング", "isCorrect": false },
+      { "label": "D", "text": "ファイブフォース分析", "isCorrect": false }
+    ],
+    "explanation": "PEST分析は政治(Political)、経済(Economic)、社会(Social)、技術(Technological)の外部環境要因を分析するフレームワークです。"
+  },
+  {
+    "id": "IP-002",
+    "domain": "ストラテジ系",
+    "difficulty": 2,
+    "text": "プロジェクトマネジメントにおけるスコープとは何を指すか。",
+    "choices": [
+      { "label": "A", "text": "プロジェクトの費用見積り", "isCorrect": false },
+      { "label": "B", "text": "作業範囲と成果物の範囲", "isCorrect": true },
+      { "label": "C", "text": "プロジェクトメンバーの役割分担", "isCorrect": false },
+      { "label": "D", "text": "スケジュールの詳細計画", "isCorrect": false }
+    ],
+    "explanation": "スコープは、プロジェクトで達成すべき作業と成果物の範囲を示します。"
+  },
+  {
+    "id": "IP-003",
+    "domain": "マネジメント系",
+    "difficulty": 2,
+    "text": "PDCA サイクルの定義で正しいものはどれか。",
+    "choices": [
+      { "label": "A", "text": "Plan（計画）→Do（実行）→Check（評価）→Act（改善）", "isCorrect": true },
+      { "label": "B", "text": "Plan→Do→Control→Action", "isCorrect": false },
+      { "label": "C", "text": "Prepare→Develop→Check→Act", "isCorrect": false },
+      { "label": "D", "text": "Plan→Deliver→Check→Adjust", "isCorrect": false }
+    ],
+    "explanation": "PDCAは計画・実行・評価・改善の連続サイクルで、継続的改善を目的とします。"
+  },
+  {
+    "id": "IP-004",
+    "domain": "テクノロジ系",
+    "difficulty": 2,
+    "text": "コンピュータネットワークで用いられる TCP の役割は次のうちどれか。",
+    "choices": [
+      { "label": "A", "text": "信頼性の高いデータ転送を提供する", "isCorrect": true },
+      { "label": "B", "text": "IP アドレスの割り当てを行う", "isCorrect": false },
+      { "label": "C", "text": "物理媒体上の電気信号を定義する", "isCorrect": false },
+      { "label": "D", "text": "ドメイン名と IP アドレスを対応付ける", "isCorrect": false }
+    ],
+    "explanation": "TCPは信頼性のあるストリーム型通信を提供し、パケットの再送制御やフロー制御を行います。"
+  },
+  {
+    "id": "IP-005",
+    "domain": "テクノロジ系",
+    "difficulty": 2,
+    "text": "暗号化方式で、公開鍵暗号方式に該当するものはどれか。",
+    "choices": [
+      { "label": "A", "text": "RSA", "isCorrect": true },
+      { "label": "B", "text": "AES", "isCorrect": false },
+      { "label": "C", "text": "DES", "isCorrect": false },
+      { "label": "D", "text": "MD5", "isCorrect": false }
+    ],
+    "explanation": "RSAは公開鍵暗号方式で、暗号化と復号に異なる鍵を用います。"
+  }
+]
